@@ -17,8 +17,12 @@ def ltoRGB(l):
         );
 
     LMS=dot(ltoLMS,l)
-   # LMS=exp(LMS)
+    LMS=exp(LMS)
     RGB=dot(LMStoRGB,LMS)
+    RGB=array([RGB[2,:],RGB[1,:],RGB[0,:]])
+    RGB[RGB>255]=255
+    RGB[RGB<0]=0
     RGB=RGB.T
+    print RGB.shape
     return RGB
 
