@@ -11,6 +11,7 @@ def change(l_s,l_t):
     trans=array([[trans[0],0,0],
                  [0,trans[1],0],
                  [0,0,trans[2]]])
+#do some change
     l_s=dot(trans,l_s)
     l_s=l_s+ave_t[:,None]
     return l_s
